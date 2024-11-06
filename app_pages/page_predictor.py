@@ -3,7 +3,7 @@ import pickle
 import numpy as np
 
 # Load the model
-with open("../outputs/pipeline/model.pkl", "rb") as f:
+with open("outputs/pipeline/model.pkl", "rb") as f:
     model = pickle.load(f)
 
 def page_predictor_body():
