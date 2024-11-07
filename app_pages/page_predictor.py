@@ -8,6 +8,8 @@ model_path = os.path.join(os.path.dirname(__file__), "../outputs/pipeline/model.
 with open(model_path, "rb") as f:
     model = pickle.load(f)
 
+print(type(model))
+
 def page_predictor_body():
     st.title("Mountain vs. Beach Preference Predictor")
 
