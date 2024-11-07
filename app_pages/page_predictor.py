@@ -133,7 +133,7 @@ def display_result(prediction):
     """
     if prediction is not None:
         # Interpret the prediction (assuming the model outputs 1 for Beach and 0 for Mountain)
-        preference = "Beach" if prediction[0] == 1 else "Mountain"
+        preference = "Mountain" if prediction[0] == 1 else "Beach"
         st.write(f"The model predicts: **{preference}**")
     else:
         st.write("There was an error making the prediction.")
