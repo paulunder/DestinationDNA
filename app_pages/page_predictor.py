@@ -80,25 +80,31 @@ def page_predictor_body():
         display_result(prediction)
 
 def get_user_input():
-    # Define the structure of the input data (features expected by the model)
     input_data = pd.DataFrame(columns=[
-        "Age", "Gender", "Income", "Travel_Frequency", "Vacation_Budget",
-        "Favorite_Season", "Proximity_to_Mountains", "Proximity_to_Beaches"
+        "Gender", "Income", "Education_Level", "Travel_Frequency", "Preferred_Activities", "Vacation_Budget", 
+        "Location", "Proximity_to_Mountains", "Proximity_to_Beaches", "Favorite_Season", "Pets", 
+        "Environmental_Concerns", "AgeGroup"
     ])
 
-    # Set up input widgets for each feature
-    age = st.slider("Age", 18, 100, 25)
-    gender = st.selectbox("Gender", ["male", "female", "non-binary"])
-    income = st.number_input("Income", 10000, 200000, step=5000)
+    # Create widgets for user input
+    gender = st.selectbox("Gender", [1, 0, 2])
+    income = st.number_input("Income", min_value=10000, max_value=200000, step=5000)
+    education_level = st.selectbox("Education Level", [0, 1, 2, 3])
     travel_frequency = st.slider("Travel Frequency per Year", 0, 12, 1)
-    vacation_budget = st.number_input("Vacation Budget", 100, 20000, step=100)
-    favorite_season = st.selectbox("Favorite Season", ["summer", "fall", "winter", "spring"])
+    preferred_activities = st.selectbox("Preferred Activities", [1, 2, 3]) 
+    vacation_budget = st.number_input("Vacation Budget", min_value=100, max_value=20000, step=100)
+    location = st.selectbox("Location", [0, 1, 2])  
     proximity_to_mountains = st.number_input("Proximity to Mountains (km)", 0, 300, step=5)
     proximity_to_beaches = st.number_input("Proximity to Beaches (km)", 0, 300, step=5)
+    favorite_season = st.selectbox("Favorite Season", [0, 1, 2, 3])  
+    pets = st.selectbox("Do you have Pets?", [0, 1])
+    environmental_concerns = st.selectbox("Environmental Concerns", [0, 1])  
+    age_group = st.selectbox("Age Group", [0, 1, 2, 3]) 
 
     input_data.loc[0] = [
-        age, gender, income, travel_frequency, vacation_budget,
-        favorite_season, proximity_to_mountains, proximity_to_beaches
+        gender, income, education_level, travel_frequency, preferred_activities,
+        vacation_budget, location, proximity_to_mountains, proximity_to_beaches,
+        favorite_season, pets, environmental_concerns, age_group
     ]
     
     return input_data
