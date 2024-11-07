@@ -1,9 +1,11 @@
 import streamlit as st
 import pickle
 import numpy as np
+import os
 
 # Load the model
-with open("outputs/pipeline/model.pkl", "rb") as f:
+model_path = os.path.join(os.path.dirname(__file__), "../outputs/pipeline/model.pkl")
+with open(model_path, "rb") as f:
     model = pickle.load(f)
 
 def page_predictor_body():
