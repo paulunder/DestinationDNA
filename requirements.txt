@@ -6,6 +6,6 @@ seaborn==0.11.0
 ydata-profiling==4.4.0
 feature-engine
 scikit-learn==1.0.2
-joblib==1.1.0
+joblib==1.4.2
 protobuf==3.20
 numpy==1.21.6
