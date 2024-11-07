@@ -5,7 +5,7 @@ import os
 from src.data_management import load_pkl_file
 
 # Load model pipeline (includes pre-processing and model)
-model_pipeline_path = os.path.join(os.path.dirname(__file__), "../outputs/pipeline/model_pipeline.pkl")
+model_pipeline_path = os.path.join(os.path.dirname(__file__), "../outputs/pipeline/model.pkl")
 model_pipeline = load_pkl_file(model_pipeline_path)
 
 def page_predictor_body():
