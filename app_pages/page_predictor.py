@@ -132,7 +132,7 @@ def display_result(prediction):
     Display the prediction result (Mountain or Beach) in the Streamlit app.
     """
     if prediction is not None:
-        # Interpret the prediction (assuming the model outputs 1 for Beach and 0 for Mountain)
+        # Interpret the prediction (the model outputs 1 for Mountain and 0 for Beach)
         preference = "Mountain" if prediction[0] == 1 else "Beach"
         st.write(f"The model predicts: **{preference}**")
     else:
