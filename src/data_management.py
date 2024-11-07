@@ -1,5 +1,8 @@
-import pickle
+import joblib
+import os
 
 def load_pkl_file(filepath):
-    with open(filepath, "rb") as file:
-        return pickle.load(file)
+    if not os.path.exists(filepath):
+        raise FileNotFoundError(f"The file {filepath} does not exist.")
+
+    return joblib.load(filepath)
