@@ -1,7 +1,7 @@
 import streamlit as st
 
 
-def page_project_conclusions_body():
+def page_conclusions_body():
 
     st.write("### Project Conclusions")
 
