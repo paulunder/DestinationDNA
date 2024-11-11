@@ -92,4 +92,44 @@ Hypotheses:
 
 #### **Regression Model**
 
-- **Model:** Random Forest Classifier
+- **Model:** Logistic Regression Model - Accuracy: 0.8983
+
+- **Model:** Decision Tree Model Accuracy: 0.9960
+
+- **Model:** Gradient Boosting Model Accuracy: 0.9960
+
+- **Model:** Random Forest Model Accuracy: 0.9953
+
+- **Model:** Naive Bayes Model Accuracy: 0.9250
+
+I have chosen the Decision Tree Model - after some tuning I got an accuracy of 0.9962.
+
+####################################################################################################
+
+## Dashboard Design
+
+### Page 1: Project Summary
+
+- Introduction the project and motivation
+- Project dataset description
+- Display the first five rows of the data
+- State business requirements
+
+### Page 2: Exploratory Data Analysis
+
+### Page 3: Project Hypotheses
+
+- State business requirement 1
+-
+
+### Page 4: Preference Predictor
+
+-
+
+### Page 5: Decision Tree Model
+
+-
+
+### Page 6: Project Conclusions
+
+-
