@@ -15,10 +15,9 @@ Images made with [Midjourney](https://www.midjourney.com/)
 4. [Map the business requirements | Data Visualizations | ML tasks](#4-map-the-business-requirements--data-visualizations--ml-tasks)
 5. [ML Business Case](#5-ml-business-case)
 6. [Dashboard Design](#6-dashboard-design)
-7. [Unfixed Bugs](#7-unfixed-bugs)
-8. [Deployment](#8-deployment)
-9. [Main Data Analysis and Machine Learning Libraries](#9-main-data-analysis-and-machine-learning-libraries)
-10. [Credits](#10-credits)
+7. [Deployment](#7-deployment)
+8. [Main Data Analysis and Machine Learning Libraries](#8-main-data-analysis-and-machine-learning-libraries)
+9. [Credits](#9-credits)
 
 ## **1. Dataset Content**
 
@@ -87,8 +86,24 @@ Hypotheses:
     - The [Feature Engineering notebook](https://github.com/paulunder/DestinationDNA/blob/main/jupyter_notebooks/04_Feature_Engineering.ipynb) + the [Model Evaluation notebook](https://github.com/paulunder/DestinationDNA/blob/main/jupyter_notebooks/05_Model_Evaluation.ipynb) handles this business requirement.
 
 ## **5. ML Business Case**
-
 ### **Predict Preference**
+We want to predict the preference of a customer based on their persona. The target variable is `Preference` which is binary. We will use the following features to predict the target variable:
+- Age
+- Gender
+- Income
+- Education Level
+- Travel Frequency
+- Preferred Activities
+- Vacation Budget
+- Location
+- Proximity to Mountains
+- Proximity to Beaches
+- Favorite Season
+- Pets
+- Environmental Concerns
+
+With this information, we can predict the probability of a customer booking a destination based on their persona.
+According to that as stated in the [Feature Engineering notebook](https://github.com/paulunder/DestinationDNA/blob/main/jupyter_notebooks/04_Feature_Engineering.ipynb) we added the feature "AgeGroup" to keep it simple and to avoid overfitting.
 
 #### **Regression Model**
 
@@ -104,8 +119,6 @@ Hypotheses:
 
 I have chosen the Decision Tree Model - after some tuning I got an accuracy of 0.9962.
 
-####################################################################################################
-
 ## Dashboard Design
 
 ### Page 1: Project Summary
@@ -117,19 +130,120 @@ I have chosen the Decision Tree Model - after some tuning I got an accuracy of 0
 
 ### Page 2: Exploratory Data Analysis
 
+- Display the distribution of the target variable
+- Display the distribution of the features
+- Display the correlation matrix
+- Display the distribution of the target variable by demographic features
+
 ### Page 3: Project Hypotheses
 
 - State business requirement 1
--
+- State business requirement 2
 
 ### Page 4: Preference Predictor
 
--
+- Display the prediction form
+- Display the prediction result
 
 ### Page 5: Decision Tree Model
 
--
+- Display the decision tree model
 
 ### Page 6: Project Conclusions
 
--
+- Summarize the project findings
+- State the main insights
+
+
+## Technologies Used
+The technologies used throughout the development are listed below:
+
+### Languages
+
+* [Python](https://www.python.org/)
+
+### Python Packages
+
+* [Pandas](https://pandas.pydata.org/docs/index.html) - Data analysis and manipulation tool
+* [Numpy](https://numpy.org/doc/stable/index.html) - The fundamental package for scientific computing with Python
+* [YData Profiling](https://docs.profiling.ydata.ai/latest/) - For data profiling and exploratory data analysis
+* [Matplotlib](https://matplotlib.org/) - Comprehensive library for creating static, animated and interactive visualisations
+* [Seaborn](https://seaborn.pydata.org/) - Data visualisation library for drawing attractive and informative statistical graphics
+* [Feature-engine](https://feature-engine.trainindata.com/en/latest/) - Transformers to engineer and select features for machine learning models
+* [ppscore](https://pypi.org/project/ppscore/) - Data-type-agnostic score that can detect linear or non-linear relationships between two columns
+* [scikit-learn](https://scikit-learn.org/stable/) - Machine learning library for training the ML model
+* [XGBoost](https://xgboost.readthedocs.io/en/stable/) - Optimised distributed gradient boosting library
+* [Imbalanced-learn](https://imbalanced-learn.org/stable/) - Tool for dealing with classification problems with imbalanced target
+* [Joblib](https://joblib.readthedocs.io/en/stable/) - Tool for dumping pipeline to pickle files
+* [Kaggle](https://pypi.org/project/kaggle/) - Kaggle API functionalit
+* [Streamlit](https://streamlit.io/) - Build the web app.
+
+### Other Technologies
+
+* [Git](https://git-scm.com/) - For version control
+* [GitHub](https://github.com/) - Code repository
+* [Heroku](https://heroku.com) - For application deployment
+* [Gitpod](https://www.gitpod.io/) - Cloud IDE used for development
+* [Jupyter Notebook](https://jupyter.org/) - Interactive Python
+* [CI Python Linter](https://pep8ci.herokuapp.com/) - Style guide for python
+
+
+## Unfixed Bugs
+* There are no unfixed bugs except for Jupyter notebook sometimes not plotting when the `Run All` button is pressed.
+* Sometimes I get `StreamlitAPIException: set_page_config() can only be called once per app page`, with a refresh of the webpage the streamlit app works fine again. The source of the issue is unknown.
+
+
+## Deployment
+
+### Set Heroku stack
+
+To log into the Heroku toolbelt CLI:
+
+0. Install the client in the terminal `curl https://cli-assets.heroku.com/install-ubuntu.sh | sh`
+1. Log in to your Heroku account and go to _Account Settings_ in the menu under your avatar.
+2. Scroll down to the _API Key_ and click _Reveal_
+3. Copy the key
+4. In the terminal, run `heroku_login -i`
+5. Enter your email and paste in your API key when asked
+6. Set the stack to heroku-24 `heroku stack:set heroku-20 --app destinationDNA`
+7. In this repo, set the `runtime.txt` Python version to `python-3.10.12` 
+
+
+The App live link is: [DestinationDNA](https://destination-dna-fea40f3ec5fa.herokuapp.com)
+
+### Deployment steps
+
+1. Log in to Heroku and create an App
+2. At the Deploy tab, select GitHub as the deployment method.
+3. Select your repository name and click Search. Once it is found, click Connect.
+4. Select the branch you want to deploy, then click Deploy Branch.
+5. The deployment process should happen smoothly if all deployment files are fully functional. Click now the button Open App on the top of the page to access your App.
+6. If the slug size is too large then add large files not required for the app to the .slugignore file.
+
+### Important configuration files
+
+* `setup.sh` should contain the following
+```
+mkdir -p ~/.streamlit/
+echo "\
+[server]\n\
+headless = true\n\
+port = $PORT\n\
+enableCORS = false\n\
+\n\
+" > ~/.streamlit/config.toml
+```
+
+* `Procfile` should contain
+```
+web: sh setup.sh && streamlit run app.py
+```
+
+## Credits 
+
+* The dataset was sourced from [Kaggle](https://www.kaggle.com/datasets/jahnavipaliwal/mountains-vs-beaches-preference).
+* ML operations are inspired by Orhan Serçe - under this link: https://www.kaggle.com/code/orhansere/mountains-vs-beaches-smote-classification
+
+
+## Acknowledgements (optional)
+* Thanks to my mentor - Mo Shami for guidance. Thanks to my family for their support. 
