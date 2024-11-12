@@ -9,7 +9,6 @@ Images made with [Midjourney](https://www.midjourney.com/)
 
 1. [Dataset Content](#1-dataset-content)
 2. [Business Requirements](#2-business-requirements)
-   - [Epics](#epics)
    - [User Stories](#user-stories)
 3. [Hypotheses and validation](#3-hypotheses-and-validation)
 4. [Map the business requirements | Data Visualizations | ML tasks](#4-map-the-business-requirements--data-visualizations--ml-tasks)
@@ -86,8 +85,11 @@ Hypotheses:
     - The [Feature Engineering notebook](https://github.com/paulunder/DestinationDNA/blob/main/jupyter_notebooks/04_Feature_Engineering.ipynb) + the [Model Evaluation notebook](https://github.com/paulunder/DestinationDNA/blob/main/jupyter_notebooks/05_Model_Evaluation.ipynb) handles this business requirement.
 
 ## **5. ML Business Case**
+
 ### **Predict Preference**
+
 We want to predict the preference of a customer based on their persona. The target variable is `Preference` which is binary. We will use the following features to predict the target variable:
+
 - Age
 - Gender
 - Income
@@ -119,7 +121,7 @@ According to that as stated in the [Feature Engineering notebook](https://github
 
 I have chosen the Decision Tree Model - after some tuning I got an accuracy of 0.9962.
 
-## Dashboard Design
+## 6. Dashboard Design
 
 ### Page 1: Project Summary
 
@@ -154,46 +156,40 @@ I have chosen the Decision Tree Model - after some tuning I got an accuracy of 0
 - Summarize the project findings
 - State the main insights
 
-
 ## Technologies Used
+
 The technologies used throughout the development are listed below:
 
 ### Languages
 
-* [Python](https://www.python.org/)
+- [Python](https://www.python.org/)
 
 ### Python Packages
 
-* [Pandas](https://pandas.pydata.org/docs/index.html) - Data analysis and manipulation tool
-* [Numpy](https://numpy.org/doc/stable/index.html) - The fundamental package for scientific computing with Python
-* [YData Profiling](https://docs.profiling.ydata.ai/latest/) - For data profiling and exploratory data analysis
-* [Matplotlib](https://matplotlib.org/) - Comprehensive library for creating static, animated and interactive visualisations
-* [Seaborn](https://seaborn.pydata.org/) - Data visualisation library for drawing attractive and informative statistical graphics
-* [Feature-engine](https://feature-engine.trainindata.com/en/latest/) - Transformers to engineer and select features for machine learning models
-* [ppscore](https://pypi.org/project/ppscore/) - Data-type-agnostic score that can detect linear or non-linear relationships between two columns
-* [scikit-learn](https://scikit-learn.org/stable/) - Machine learning library for training the ML model
-* [XGBoost](https://xgboost.readthedocs.io/en/stable/) - Optimised distributed gradient boosting library
-* [Imbalanced-learn](https://imbalanced-learn.org/stable/) - Tool for dealing with classification problems with imbalanced target
-* [Joblib](https://joblib.readthedocs.io/en/stable/) - Tool for dumping pipeline to pickle files
-* [Kaggle](https://pypi.org/project/kaggle/) - Kaggle API functionalit
-* [Streamlit](https://streamlit.io/) - Build the web app.
+- [Pandas](https://pandas.pydata.org/docs/index.html) - Data analysis and manipulation tool
+- [Numpy](https://numpy.org/doc/stable/index.html) - The fundamental package for scientific computing with Python
+- [YData Profiling](https://docs.profiling.ydata.ai/latest/) - For data profiling and exploratory data analysis
+- [Matplotlib](https://matplotlib.org/) - Comprehensive library for creating static, animated and interactive visualisations
+- [Seaborn](https://seaborn.pydata.org/) - Data visualisation library for drawing attractive and informative statistical graphics
+- [Feature-engine](https://feature-engine.trainindata.com/en/latest/) - Transformers to engineer and select features for machine learning models
+- [ppscore](https://pypi.org/project/ppscore/) - Data-type-agnostic score that can detect linear or non-linear relationships between two columns
+- [scikit-learn](https://scikit-learn.org/stable/) - Machine learning library for training the ML model
+- [XGBoost](https://xgboost.readthedocs.io/en/stable/) - Optimised distributed gradient boosting library
+- [Imbalanced-learn](https://imbalanced-learn.org/stable/) - Tool for dealing with classification problems with imbalanced target
+- [Joblib](https://joblib.readthedocs.io/en/stable/) - Tool for dumping pipeline to pickle files
+- [Kaggle](https://pypi.org/project/kaggle/) - Kaggle API functionalit
+- [Streamlit](https://streamlit.io/) - Build the web app.
 
 ### Other Technologies
 
-* [Git](https://git-scm.com/) - For version control
-* [GitHub](https://github.com/) - Code repository
-* [Heroku](https://heroku.com) - For application deployment
-* [Gitpod](https://www.gitpod.io/) - Cloud IDE used for development
-* [Jupyter Notebook](https://jupyter.org/) - Interactive Python
-* [CI Python Linter](https://pep8ci.herokuapp.com/) - Style guide for python
+- [Git](https://git-scm.com/) - For version control
+- [GitHub](https://github.com/) - Code repository
+- [Heroku](https://heroku.com) - For application deployment
+- [Gitpod](https://www.gitpod.io/) - Cloud IDE used for development
+- [Jupyter Notebook](https://jupyter.org/) - Interactive Python
+- [CI Python Linter](https://pep8ci.herokuapp.com/) - Style guide for python
 
-
-## Unfixed Bugs
-* There are no unfixed bugs except for Jupyter notebook sometimes not plotting when the `Run All` button is pressed.
-* Sometimes I get `StreamlitAPIException: set_page_config() can only be called once per app page`, with a refresh of the webpage the streamlit app works fine again. The source of the issue is unknown.
-
-
-## Deployment
+## 7. Deployment
 
 ### Set Heroku stack
 
@@ -206,8 +202,7 @@ To log into the Heroku toolbelt CLI:
 4. In the terminal, run `heroku_login -i`
 5. Enter your email and paste in your API key when asked
 6. Set the stack to heroku-24 `heroku stack:set heroku-20 --app destinationDNA`
-7. In this repo, set the `runtime.txt` Python version to `python-3.10.12` 
-
+7. In this repo, set the `runtime.txt` Python version to `python-3.10.12`
 
 The App live link is: [DestinationDNA](https://destination-dna-fea40f3ec5fa.herokuapp.com)
 
@@ -222,7 +217,8 @@ The App live link is: [DestinationDNA](https://destination-dna-fea40f3ec5fa.hero
 
 ### Important configuration files
 
-* `setup.sh` should contain the following
+- `setup.sh` should contain the following
+
 ```
 mkdir -p ~/.streamlit/
 echo "\
@@ -234,16 +230,21 @@ enableCORS = false\n\
 " > ~/.streamlit/config.toml
 ```
 
-* `Procfile` should contain
+- `Procfile` should contain
+
 ```
 web: sh setup.sh && streamlit run app.py
 ```
 
-## Credits 
+## 8. Main Data Analysis and Machine Learning Libraries
 
-* The dataset was sourced from [Kaggle](https://www.kaggle.com/datasets/jahnavipaliwal/mountains-vs-beaches-preference).
-* ML operations are inspired by Orhan Serçe - under this link: https://www.kaggle.com/code/orhansere/mountains-vs-beaches-smote-classification
+####################################################################################################
 
+## 9. Credits
 
-## Acknowledgements (optional)
-* Thanks to my mentor - Mo Shami for guidance. Thanks to my family for their support. 
+- The dataset was sourced from [Kaggle](https://www.kaggle.com/datasets/jahnavipaliwal/mountains-vs-beaches-preference).
+- ML operations are inspired by Orhan Serçe - under this link: https://www.kaggle.com/code/orhansere/mountains-vs-beaches-smote-classification
+
+## 10. Acknowledgements
+
+- Thanks to my mentor - Mo Shami for guidance. Thanks to my family for their support.
