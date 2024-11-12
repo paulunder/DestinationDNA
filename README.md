@@ -247,4 +247,5 @@ web: sh setup.sh && streamlit run app.py
 
 ## 10. Acknowledgements
 
-- Thanks to my mentor - Mo Shami for guidance. Thanks to my family for their support.
+- Thanks to my mentor - Mo Shami for guidance.
+- Thanks to my family for their support.
