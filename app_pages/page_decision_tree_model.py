@@ -28,5 +28,5 @@ def page_decision_tree_model_body():
         st.write(f"Model Accuracy: {accuracy:.4f}")
 
         plt.figure(figsize=(10, 6))
-        plot_tree(model, feature_names=X.columns, filled=True, class_names=['Beach', 'Mountain'])
+        plot_tree(model, feature_names=X.columns, filled=False, class_names=['Beach', 'Mountain'])
         st.pyplot(plt.gcf())
