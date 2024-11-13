@@ -5,13 +5,57 @@ import matplotlib.pyplot as plt
 
 def page_eda_body():
     st.title("Exploratory Data Analysis")
-    data = pd.read_csv("outputs/datasets/processed/balanced_mountains_vs_beaches_preferences.csv")
+    data_raw = pd.read_csv("outputs/datasets/raw/mountains_vs_beaches_preferences.csv")
+    data_processed = pd.read_csv("outputs/datasets/processed/balanced_mountains_vs_beaches_preferences.csv")
     
     st.write("Dataset Overview")
-    st.write(data.head())
+    st.write(data_raw.head())
     
     st.write("Correlation Heatmap")
-    corr = data.corr()
+    corr = data_raw.corr()
     plt.figure(figsize=(12, 8))
     sns.heatmap(corr, annot=True, cmap="coolwarm")
     st.pyplot()
+
+    # Title and description
+    st.title("Exploratory Data Analysis (EDA)")
+    st.write("This page provides basic exploratory data analysis on your dataset.")
+
+    # Display raw data
+    st.subheader("Raw Data")
+    st.write("Preview of the dataset:")
+    st.dataframe(data_raw.head())
+
+    # Summary statistics
+    st.subheader("Summary Statistics")
+    st.write("A quick look at numerical summaries of the dataset:")
+    st.write(data_raw.describe())
+
+    # Categorical column distributions
+    st.subheader("Categorical Feature Distributions")
+    categorical_cols = data_raw.select_dtypes(include=['object', 'category']).columns
+    for col in categorical_cols:
+        st.write(f"Distribution of **{col}**")
+        st.bar_chart(data_raw[col].value_counts())
+
+    # Correlation Heatmap
+    st.subheader("Correlation Heatmap")
+    st.write("Correlation between numerical features:")
+    plt.figure(figsize=(10, 6))
+    sns.heatmap(data_processed.corr(numeric_only=True), annot=True, cmap="coolwarm")
+    st.pyplot(plt.gcf())
+
+    # Pair plot for selected numerical columns
+    st.subheader("Pair Plot")
+    numeric_cols = data_raw.select_dtypes(include=['float64', 'int']).columns
+    st.write("Pairwise relationships between selected numerical features:")
+    sns.pairplot(data_raw[numeric_cols])
+    st.pyplot(plt.gcf())
+
+    # Interactive filter for specific analysis
+    st.subheader("Filter by Preference")
+    preference = st.selectbox("Select Preference:", data_raw['Preference'].unique())
+    filtered_data = data_raw[data_raw['Preference'] == preference]
+    st.write(f"Data for users who prefer: **{preference}**")
+    st.dataframe(filtered_data)
+
