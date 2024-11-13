@@ -9,7 +9,7 @@ from app_pages.page_decision_tree_model import page_decision_tree_model_body
 from app_pages.page_conclusions import page_conclusions_body
 
 # Initialize the app
-app = MultiPage(app_name="Mountain vs Beach Preferences Classifier")
+app = MultiPage(app_name="Destination DNA")
 
 # Add pages to the app
 app.add_page("Project Summary", page_summary_body)

@@ -12,5 +12,6 @@ def page_eda_body():
     
     st.write("Correlation Heatmap")
     corr = data.corr()
+    plt.figure(figsize=(12, 8))
     sns.heatmap(corr, annot=True, cmap="coolwarm")
     st.pyplot()
