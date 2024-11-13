@@ -10,31 +10,30 @@ def page_eda_body():
     st.title("Exploratory Data Analysis")
     st.write("This page provides basic exploratory data analysis on your dataset.")
 
-    # Display raw data
     st.subheader("Raw Data")
     st.write("Preview of the dataset:")
     st.dataframe(data_raw.head())
 
-    # Summary statistics
     st.subheader("Summary Statistics")
     st.write("A quick look at numerical summaries of the dataset:")
     st.write(data_raw.describe())
 
-    # Categorical column distributions
     st.subheader("Categorical Feature Distributions")
     categorical_cols = data_raw.select_dtypes(include=['object', 'category']).columns
     for col in categorical_cols:
         st.write(f"Distribution of **{col}**")
         st.bar_chart(data_raw[col].value_counts())
+    
+    st.subheader("Target Variable Distribution")
+    st.write("Distribution of the target variable:")
+    st.bar_chart(data_raw['Preference'].value_counts())
 
-    # Correlation Heatmap
     st.subheader("Correlation Heatmap")
     st.write("Correlation between numerical features:")
     plt.figure(figsize=(10, 6))
     sns.heatmap(data_processed.corr(numeric_only=True), annot=True, cmap="coolwarm")
     st.pyplot(plt.gcf())
 
-    # Pair plot for selected numerical columns
     st.subheader("Pair Plot")
     numeric_cols = data_raw.select_dtypes(include=['float64', 'int']).columns
     st.write("Pairwise relationships between selected numerical features:")
