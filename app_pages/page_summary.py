@@ -6,7 +6,7 @@ DATASET_DF = pd.read_csv(
     f"outputs/datasets/raw/mountains_vs_beaches_preferences.csv").head(5)
 
 
-def page_project_summary_body():
+def page_summary_body():
 
     st.write(
         f"* [Project Summary](#project-summary)\n"
