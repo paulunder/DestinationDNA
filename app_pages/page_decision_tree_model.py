@@ -27,6 +27,6 @@ def page_decision_tree_model_body():
         accuracy = accuracy_score(y_test, model.predict(X_test))
         st.write(f"Model Accuracy: {accuracy:.4f}")
 
-        plt.figure(figsize=(10, 6))
-        plot_tree(model, feature_names=X.columns, filled=False, class_names=['Beach', 'Mountain'])
+        plt.figure(figsize=(20, 12))
+        plot_tree(model, feature_names=X.columns, filled=True, class_names=['Beach', 'Mountain'])
         st.pyplot(plt.gcf())
