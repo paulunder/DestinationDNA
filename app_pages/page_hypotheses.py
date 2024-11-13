@@ -10,6 +10,8 @@ def page_hypotheses_body():
     csv_dir = "outputs/datasets/raw"
     csv_file = "mountains_vs_beaches_preferences.csv"
     df = pd.read_csv(f"{csv_dir}/{csv_file}")
+    df_encoded = pd.get_dummies(df, drop_first=True)
+    correlation_matrix = df_encoded.corr()
 
     st.write(
         "* [Hypothesis 1](#hypothesis-1)\n"
@@ -39,12 +41,10 @@ def page_hypotheses_body():
     st.write("---")
 
     if st.checkbox("Inspect Correlation Heatmap"):
-        show_plot(df)
+        show_plot(correlation_matrix)
 
-def show_plot(df):
-    df_encoded = pd.get_dummies(df, drop_first=True)
-    correlation_matrix = df_encoded.corr()
+def show_plot(matrix):
     plt.figure(figsize=(12, 10))
-    sns.heatmap(correlation_matrix, annot=True, fmt=".2f", cmap="coolwarm", cbar=True)
+    sns.heatmap(matrix, annot=True, fmt=".2f", cmap="coolwarm", cbar=True)
     plt.title("Correlation Matrix")
     plt.show()
