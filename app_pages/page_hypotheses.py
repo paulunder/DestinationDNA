@@ -11,10 +11,6 @@ def page_hypotheses_body():
     csv_file = "mountains_vs_beaches_preferences.csv"
     df = pd.read_csv(f"{csv_dir}/{csv_file}")
 
-
-    features_importance = plt.imread(
-        "outputs/datasets/raw/mountains_vs_beaches_preferences.csv")
-
     st.write(
         "* [Hypothesis 1](#hypothesis-1)\n"
         "* [Hypothesis 2](#hypothesis-2)\n"
