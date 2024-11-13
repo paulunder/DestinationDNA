@@ -13,7 +13,7 @@ def page_decision_tree_model_body():
     max_depth = st.sidebar.slider("Max Depth", 1, 20, 5)
     min_samples_split = st.sidebar.slider("Min Samples Split", 2, 10, 2)
 
-    df = pd.read_csv("outputs/datasets/raw/mountains_vs_beaches_preferences.csv")
+    df = pd.read_csv("outputs/datasets/processed/balanced_mountains_vs_beaches_preferences.csv")
     X = df.drop(columns=['Preference'])
     y = df['Preference']
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25, random_state=42)
