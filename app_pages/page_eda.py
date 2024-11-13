@@ -4,21 +4,10 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 
 def page_eda_body():
-    st.title("Exploratory Data Analysis")
     data_raw = pd.read_csv("outputs/datasets/raw/mountains_vs_beaches_preferences.csv")
     data_processed = pd.read_csv("outputs/datasets/processed/balanced_mountains_vs_beaches_preferences.csv")
     
-    st.write("Dataset Overview")
-    st.write(data_raw.head())
-    
-    st.write("Correlation Heatmap")
-    corr = data_raw.corr()
-    plt.figure(figsize=(12, 8))
-    sns.heatmap(corr, annot=True, cmap="coolwarm")
-    st.pyplot()
-
-    # Title and description
-    st.title("Exploratory Data Analysis (EDA)")
+    st.title("Exploratory Data Analysis")
     st.write("This page provides basic exploratory data analysis on your dataset.")
 
     # Display raw data
@@ -51,11 +40,4 @@ def page_eda_body():
     st.write("Pairwise relationships between selected numerical features:")
     sns.pairplot(data_raw[numeric_cols])
     st.pyplot(plt.gcf())
-
-    # Interactive filter for specific analysis
-    st.subheader("Filter by Preference")
-    preference = st.selectbox("Select Preference:", data_raw['Preference'].unique())
-    filtered_data = data_raw[data_raw['Preference'] == preference]
-    st.write(f"Data for users who prefer: **{preference}**")
-    st.dataframe(filtered_data)
 
