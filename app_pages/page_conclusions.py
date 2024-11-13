@@ -10,15 +10,15 @@ def page_conclusions_body():
     )
     
     st.success(
-        f"#### Business Requirements\n\n"
-        f"Understanding the relationship between the destination and the customer persona "
-        f"At the Data Analysis stage, I found that the destination and the customer persona are related - plots and graphs were used. "
-        f"The Decision Tree model was able to predict the preference of a customer based on their persona. "
+        "#### Business Requirements\n\n"
+        "Understanding the relationship between the destination and the customer persona "
+        "At the Data Analysis stage, I found that the destination and the customer persona are related - plots and graphs were used. "
+        "The Decision Tree model was able to predict the preference of a customer based on their persona. "
 
     )
 
     st.info(
-        f"#### Project Outcomes\n\n"
-        f"The project was able to predict the preference of a customer based on their persona\n"
-        f"I found out that not most features are not that important in predicting the preference of a customer\n"
+        "#### Project Outcomes\n\n"
+        "The project was able to predict the preference of a customer based on their persona.\n"
+        "I found out that most features are not that important in predicting the preference of a customer\n"
     )

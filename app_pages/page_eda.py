@@ -30,7 +30,7 @@ def page_eda_body():
 
     st.subheader("Correlation Heatmap")
     st.write("Correlation between numerical features:")
-    plt.figure(figsize=(10, 6))
+    plt.figure(figsize=(12, 6))
     sns.heatmap(data_processed.corr(numeric_only=True), annot=True, cmap="coolwarm")
     st.pyplot(plt.gcf())
 
