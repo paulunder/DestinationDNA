@@ -27,6 +27,9 @@ def page_predictor_body():
 
 
 def get_user_input():
+    """
+    Function to collect user input for the prediction.
+    """
     # Mapping dictionaries for user-friendly display
     gender_mapping = {"male": 1, "female": 0, "non-binary": 2}
     education_level_mapping = {
@@ -87,6 +90,9 @@ def get_user_input():
 
 
 def predict_preference(input_data, model_pipeline):
+    """
+    Function to make a prediction using the model pipeline.
+    """
     if isinstance(model_pipeline, Pipeline):
         try:
             prediction = model_pipeline.predict(input_data)
@@ -100,6 +106,9 @@ def predict_preference(input_data, model_pipeline):
 
 
 def display_result(prediction):
+    """
+    Function to display the prediction result.
+    """
     if prediction is not None:
         preference = "Mountains" if prediction[0] == 1 else "Beach"
         st.markdown(
