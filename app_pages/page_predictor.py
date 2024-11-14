@@ -103,8 +103,7 @@ def display_result(prediction):
     if prediction is not None:
         preference = "Mountains" if prediction[0] == 1 else "Beach"
         st.markdown(
-            f"<h2 style='font-size: 36px;'>The person is likely "
-            "to make a vacation at the <b>{preference}</b></h2>",
+            f"<h2 style='font-size: 36px;'>The person is likely to make a vacation at the <b>{preference}</b></h2>",
             unsafe_allow_html=True
             )
     else:
