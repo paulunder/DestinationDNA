@@ -18,7 +18,7 @@ def page_hypotheses_body():
         "near beaches are more likely to prefer beach vacations."
     )
     st.success(
-        " * According tio the data analysis, this hypothesis is true."
+        " * According to the data analysis, this hypothesis is true."
         " * People living near beaches are more likely to prefer "
         "beach vacations."
         " * People living near mountains are more likely to prefer "

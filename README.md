@@ -14,9 +14,11 @@ Images made with [Midjourney](https://www.midjourney.com/)
 4. [Map the business requirements | Data Visualizations | ML tasks](#4-map-the-business-requirements--data-visualizations--ml-tasks)
 5. [ML Business Case](#5-ml-business-case)
 6. [Dashboard Design](#6-dashboard-design)
-7. [Deployment](#7-deployment)
-8. [Main Data Analysis and Machine Learning Libraries](#8-main-data-analysis-and-machine-learning-libraries)
-9. [Credits](#9-credits)
+7. [Testing](#7-testing)
+8. [Used Technologies](#8-used-technologies)
+9. [Deployment](#9-deployment)
+10. [Credits](#10-credits)
+11. [Acknowledgements](#11-acknowledgements)
 
 ## **1. Dataset Content**
 
@@ -47,9 +49,7 @@ Images made with [Midjourney](https://www.midjourney.com/)
 
 - **US3:** As a user, I want to know the most important features that determine my vacation destination preference, so that I can understand the factors that influence my decision. (_Business Requirement Covered: BR1_)
 
-- **US4:** As a user, I want to know the distribution of vacation preferences across different demographic groups, so that I can compare my preferences with those of others. (_Business Requirement Covered: BR1_)
-
-- **US5:** As a client, I want to get a machine learning model that can predict the probability of a customer booking a destination based on their persona. (_Business Requirement Covered: BR2_)
+- **US4:** As a client, I want to get a machine learning model that can predict the probability of a customer booking a destination based on their persona. (_Business Requirement Covered: BR2_)
 
 ## **3. Hypothesis and how to validate?**
 
@@ -57,18 +57,11 @@ Hypotheses:
 
     Hypothesis 1:
 
-    Demographic characteristics (age, income, education) significantly influence vacation destination preferences.
-    Validation: Perform feature importance analysis using a machine learning classification model (e.g., Random Forest or Logistic Regression) to determine which demographic features most strongly predict destination preference.
+    We suspect that people which are living near beaches are more likely to prefer beach vacations.
 
     Hypothesis 2:
 
-    There are distinct customer personas that can be clustered based on their vacation preferences and demographic characteristics.
-    Validation: Apply unsupervised learning techniques like K-means clustering to group customers, then analyze the cluster characteristics using descriptive statistics and visualization to identify unique customer segments.
-
-    Hypothesis 3:
-
-    Geographic or regional factors play a crucial role in destination preferences beyond individual demographic characteristics.
-    Validation: Create interaction features that combine demographic data with geographic information, then compare model performance with and without these interaction features to assess their predictive power.
+    We suspect that the preferred activities have heavy influence on the destination choice.
 
 ## **4. Map the business requirements | Data Visualizations | ML tasks**
 
@@ -156,7 +149,52 @@ I have chosen the Decision Tree Model - after some tuning I got an accuracy of 0
 - Summarize the project findings
 - State the main insights
 
-## Technologies Used
+## **7. Testing**
+
+### Validation
+
+All code in the app_pages and src directories was validated as conforming to PEP8 standards using CodeInstitute's PEP8 Linter.
+
+- Some files had warnings due to 'line too long', however these were related to long strings when writing to the dashboard.
+- These warnings were ignored as it did not effect the readability of any functions.
+
+#### User Story Testing
+
+- Dashboard was tested manually on Mozilla Firefox Browser and Google Chrome Browser.
+
+_As a client(marketing oriented), I want to see insights into preferred destinations based on user demographics, so I can tailor our advertising efforts to target the right audience. (Business Requirement Covered: BR2)_
+
+| Feature                        | Action               | Expected Result                                          | Actual Result         |
+| ------------------------------ | -------------------- | -------------------------------------------------------- | --------------------- |
+| Exploratory Data Analysis Page | Viewing summary page | Page is displayed, study the features which are relevant | Functions as intended |
+
+---
+
+_As a user, I want to receive a vacation destination recommendation (mountain or beach) based on my personal preferences, so that I can choose the destination that best suits my interests. (Business Requirement Covered: BR2)_
+
+| Feature                 | Action           | Expected Result                                  | Actual Result         |
+| ----------------------- | ---------------- | ------------------------------------------------ | --------------------- |
+| Predict Preference Page | Navigate to page | Select the attributes and predict the preference | Functions as intended |
+
+---
+
+_As a user, I want to know the most important features that determine my vacation destination preference, so that I can understand the factors that influence my decision. (Business Requirement Covered: BR1)_
+
+| Feature                        | Action               | Expected Result                                          | Actual Result         |
+| ------------------------------ | -------------------- | -------------------------------------------------------- | --------------------- |
+| Exploratory Data Analysis Page | Viewing summary page | Page is displayed, study the features which are relevant | Functions as intended |
+
+---
+
+_As a client, I want to get a machine learning model that can predict the probability of a customer booking a destination based on their persona. (Business Requirement Covered: BR2)_
+
+| Feature                 | Action           | Expected Result                                  | Actual Result         |
+| ----------------------- | ---------------- | ------------------------------------------------ | --------------------- |
+| Predict Preference Page | Navigate to page | Select the attributes and predict the preference | Functions as intended |
+
+---
+
+## **8. Used Technologies**
 
 The technologies used throughout the development are listed below:
 
@@ -189,7 +227,7 @@ The technologies used throughout the development are listed below:
 - [Jupyter Notebook](https://jupyter.org/) - Interactive Python
 - [CI Python Linter](https://pep8ci.herokuapp.com/) - Style guide for python
 
-## 7. Deployment
+## **9. Deployment**
 
 ### Set Heroku stack
 
@@ -236,16 +274,12 @@ enableCORS = false\n\
 web: sh setup.sh && streamlit run app.py
 ```
 
-## 8. Main Data Analysis and Machine Learning Libraries
-
-####################################################################################################
-
-## 9. Credits
+## **10. Credits**
 
 - The dataset was sourced from [Kaggle](https://www.kaggle.com/datasets/jahnavipaliwal/mountains-vs-beaches-preference).
 - ML operations are inspired by Orhan Serçe - under this link: https://www.kaggle.com/code/orhansere/mountains-vs-beaches-smote-classification
 
-## 10. Acknowledgements
+## **11. Acknowledgements**
 
 - Thanks to my mentor - Mo Shami for guidance.
 - Thanks to my family for their support.
