@@ -247,8 +247,11 @@ The App live link is: [DestinationDNA](https://destination-dna-fea40f3ec5fa.hero
 ### Deployment steps
 
 1. Log in to Heroku and create an App
+   ![Heroku Dashboard](/docs/images/deployment/create-new-app.png)
+   ![Name your app](/docs/images/deployment/name-app.png)
 2. At the Deploy tab, select GitHub as the deployment method.
 3. Select your repository name and click Search. Once it is found, click Connect.
+   ![Connect to your github repository](/docs/images/deployment/github-connect.png)
 4. Select the branch you want to deploy, then click Deploy Branch.
 5. The deployment process should happen smoothly if all deployment files are fully functional. Click now the button Open App on the top of the page to access your App.
 6. If the slug size is too large then add large files not required for the app to the .slugignore file.
