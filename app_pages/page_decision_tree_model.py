@@ -12,6 +12,10 @@ def page_decision_tree_model_body():
     """
     st.title("Decision Tree Model")
 
+    st.write(
+        "In this section, you can test out a Decision Tree models accuracy "
+    )
+
     # Sidebar parameters for model configuration
     max_depth = st.sidebar.slider("Max Depth", 1, 20, 5)
     min_samples_split = st.sidebar.slider("Min Samples Split", 2, 10, 2)
