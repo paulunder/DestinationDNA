@@ -65,7 +65,7 @@ Hypotheses:
 
     Hypothesis 3:
 
-    We suspect that environmental concerns have a influence between the correlation of proximity to the destination and the preference.
+    We suspect that environmental concerns have an influence on the correlation between proximity to the destination and the preference.
 
 ## **4. Map the business requirements | Data Visualizations | ML tasks**
 
