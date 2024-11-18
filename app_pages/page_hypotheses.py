@@ -38,3 +38,16 @@ def page_hypotheses_body():
     )
 
     st.write("---")
+
+    st.write("### Hypothesis 3")
+    st.warning(
+        "* We suspect that environmental concerns have a "
+        "influence of the correlation between proximity to the "
+        "destination and the preference."
+    )
+    st.error(
+        " * That was not true. The environmental "
+        "concerns do not have a "
+        "influence on the correlation between "
+        "the proximity of the destination."
+    )

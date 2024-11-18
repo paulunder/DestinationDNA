@@ -63,6 +63,10 @@ Hypotheses:
 
     We suspect that the preferred activities have heavy influence on the destination choice.
 
+    Hypothesis 3:
+
+    We suspect that environmental concerns have a influence between the correlation of proximity to the destination and the preference.
+
 ## **4. Map the business requirements | Data Visualizations | ML tasks**
 
 - **Business Requirement 1 (BR1):** Data Visualization and Correlation study
