@@ -10,6 +10,7 @@ def page_hypotheses_body():
     st.write(
         "* [Hypothesis 1](#hypothesis-1)\n"
         "* [Hypothesis 2](#hypothesis-2)\n"
+        "* [Hypothesis 3](#hypothesis-3)"
     )
 
     st.write("### Hypothesis 1")
