@@ -31,11 +31,9 @@ def page_summary_body():
         "#### **Project Dataset**\n\n"
         "**Dataset**: A publically available dataset sourced from "
         "[Kaggle](https://www.kaggle.com/datasets/jahnavipaliwal/mountains-vs-beaches-preference)"
-        "was used for this project.\n\n"
+        " was used for this project.\n\n"
         "The dataset contains 14 attributes, with 'Preference' "
         "as the target. The dataset contains a total of 52445 rows.\n\n"
-        "**Dataset Observations**: The dataset contains a "
-        "total of 918 observations."
     )
 
     st.dataframe(DATASET_DF)
